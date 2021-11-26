@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edison ALamos | Antologia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="containerPresent">
+    <div class="content-present">
+        <img src="img/img cge.jpg" alt="" class="imgschool">
+        <div class="header-present">
+            <h1 class="titulo-present">Poemas & microcuentos</h1>
+            <div class="description-present">
+                <span><strong>Nombre :</strong>Edison Alamos</span>
+                <br>
+                <span><strong>Curso : </strong>2 Medio</span>
+                <br>
+                <span><strong>Asignatura :</strong>Lenguaje</span>
+                <br>
+                <span><strong>Profesor(a) :</strong>Wendy Andara</span>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="controls">
+        <button clas="btns-controls" id="atras">Atrás</button>
+        <div>
+            <span>Edison Álamos</span>
+            <div style="display:flex;flex-direction: row;">
+                <span id="npages">Pagina</span>
+                <span href="#" id="btninfo">Info</span>
+                <div class="info">
+                    <span class="closeinfo">Cerrar</span>
+                    Esta Antologia es mejor que la vea en computador, ya que no la hice para celular(Que se vea bien en celular), si es que puede.
+                </div>
+            </div>
+        </div>
+        <button clas="btns-controls" id="avanzar">Avanzar</button>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        for(var i in params){  
+            var namepage = params[i][1];
+            var sumar =++ namepage;
+        if( params[i][0] === "p" && namepage) {
+            const xd =-- namepage;
+            console.log(xd);
+            if(namepage < 7) {
+            document.getElementById('npages').innerHTML=`Pagina ${xd} de 7`;
+            //------------
+            document.getElementById('avanzar').innerHTML=`<a style='text-decoration:none;border:none;' href="p/${sumar}.html?p=${sumar}">Avanzar</a>`;
+          }
+          else if(!namepage) {
+
+          }
+          else {
+            document.getElementById('avanzar').innerText=`ESTA FUE LA ULTIMA PAGINA`;
+          }
+
+        }
+        else {
+            document.getElementById('avanzar').innerText=`NO ES POSIBLE AVANZAR`;
+        }
+    }
+    </script>
+</body>
+</html>
